@@ -30,7 +30,7 @@ You must be able to strictly follow these deadlines to continuously participate 
 
 ## Code Requirement
 
-- Well commented.
+- Well commented. **Prefer Javadoc over regular comments, use whenever possible.**
 - Cannot repeat anything in `dev` branch.
 - Must be bug free, running it produces no Exceptions.
 - There is no coding style requirement.
