@@ -1,3 +1,7 @@
+# Java
+
+Use Java 1.8, Jesse has JDK 1.8.0.60 from Oracle.
+
 # IDE
 
 Jesse uses intelliJ Idea community edition. Anything is ok here, but you should set .gitignore accordingly.

@@ -1,4 +1,4 @@
-package org.in-code-learning;
+package org.incodelearning;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
