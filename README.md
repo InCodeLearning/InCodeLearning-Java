@@ -41,3 +41,4 @@ You must be able to strictly follow these deadlines to continuously participate 
 - [Java Specifications](https://docs.oracle.com/javase/specs/)
 - [Junit Vogella Tutorial](http://www.vogella.com/tutorials/JUnit/article.html)
 - [Guava Git Repository](https://github.com/google/guava)
+- [JavaDoc FAQ](http://www.oracle.com/technetwork/articles/javase/index-137483.html)
