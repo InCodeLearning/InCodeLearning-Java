@@ -33,13 +33,16 @@ public class NestedClassSingletonExampleUsage {
         System.out.println("After construct StaticNestedClass attributes values of outclass.");
         System.out.println("outerIntegerNonStatic: " + instance1.outerIntegerNonStatic + " Expected: 10");
         System.out.println("outerStringStatic: " + NestedClassSingletonExample.outerStringStatic  + " Expected: Hi");
+        System.out.println("initial 0 staticClassStaticInt: " + NestedClassSingletonExample.StaticNestedClass.staticClassStaticInt);
+        NestedClassSingletonExample.StaticNestedClass.test("Hello", 15);
+        System.out.println("changed to 1 staticClassStaticInt: " + NestedClassSingletonExample.StaticNestedClass.staticClassStaticInt);
         System.out.println();
 
         // Construct NonStaticNestedClass
         NestedClassSingletonExample.NonStaticNestedClass nonStaticNestedClass =
                 NestedClassSingletonExample.getInstance().new NonStaticNestedClass("Good");
         System.out.println("After construct StaticNestedClass attributes values of outclass.");
-        System.out.println("outerIntegerNonStatic: " + instance1.outerIntegerNonStatic + " Expected: 10");
+        System.out.println("outerIntegerNonStatic: " + instance1.outerIntegerNonStatic + " Expected: 15");
         System.out.println("outerStringStatic: " + NestedClassSingletonExample.outerStringStatic + " Expected: Good");
         System.out.println();
 
@@ -48,6 +51,14 @@ public class NestedClassSingletonExampleUsage {
         System.out.println("After construct StaticNestedClass attributes values of outclass.");
         System.out.println("outerIntegerNonStatic: " + instance1.outerIntegerNonStatic + " Expected: 20");
         System.out.println("outerStringStatic: " + NestedClassSingletonExample.outerStringStatic + " Expected: GoodByte");
+        System.out.println();
+
+        // Construct another StaticNestedClass
+        NestedClassSingletonExample.StaticNestedClass staticNestedClass2 = new NestedClassSingletonExample.StaticNestedClass("Hi");
+        System.out.println("staticNestedClass == staticNestedClass2: " + Boolean.toString(staticNestedClass == staticNestedClass2));
+        NestedClassSingletonExample.StaticNestedClass.test("Hello", 25);
+        System.out.println("changed to 2 staticClassStaticInt: " + NestedClassSingletonExample.StaticNestedClass.staticClassStaticInt);
+
         System.out.println();
     }
 }

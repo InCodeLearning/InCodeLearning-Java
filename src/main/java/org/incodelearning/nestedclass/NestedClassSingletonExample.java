@@ -59,7 +59,7 @@ public class NestedClassSingletonExample {
     // Below is demonstrating more nested class, not related with singleton.
     public static class StaticNestedClass {
 
-
+        public static int staticClassStaticInt = 0;
 
         // for static nested class, only static field in the outter class can be accessed. (outerIntegerNonStatic cannot be accessed)
         public StaticNestedClass(String innerString) {
@@ -69,6 +69,7 @@ public class NestedClassSingletonExample {
         public static void test(String innerString, int i) {
             outerStringStatic = innerString;
             getInstance().outerIntegerNonStatic = i;
+            staticClassStaticInt++;
         }
     }
 
