@@ -18,6 +18,7 @@ package org.incodelearning.nestedclass;
  * (3) anonymous inner class (I will work on this next week).
  */
 
+
 public class NestedClassSingletonExample {
 
     public int outerIntegerNonStatic = 10;
