@@ -9,8 +9,10 @@ import java.util.Scanner;
  * <a href=https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html>java tutorial link</a>.
  */
 public class Variables {
-    /** instance variable, non-static field. */
-    public int instanceVar; 
+    /**
+     * instance variable, non-static field.
+     */
+    public int instanceVar;
     /**
      * A static field, class variable.
      * The serialVersionUID is a universal version identifier for a Serializable class. Deserialization uses this
@@ -24,8 +26,8 @@ public class Variables {
      */
     public static void print4VarTypes() {
         // local variable
-        String[] varTypes = {"instance variable (non-static field)", "class variable (static field)", "local varible (only " +
-                "visible in the method)", "parameters"};
+        String[] varTypes = {"instance variable (non-static field)", "class variable (static field)", "local varible " +
+                "(only visible in the method)", "parameters"};
         System.out.println(Arrays.toString(varTypes));
     }
 
@@ -42,9 +44,10 @@ public class Variables {
 
     /**
      * Print all 50 java keywords/reserved words.
+     *
      * @param file text file with all keywords.
      */
-    public static void keywords(File file){
+    public static void keywords(File file) {
         try (Scanner scan = new Scanner(file)) {
             int count = 0;
             while (scan.hasNext()) {
@@ -63,6 +66,7 @@ public class Variables {
      * <li>generally speaking, variables > fields
      * <li>members = a type's fields + methods + nested types
      * </ul>
+     *
      * @param args command line arguments.
      */
     public static void main(String[] args) {
