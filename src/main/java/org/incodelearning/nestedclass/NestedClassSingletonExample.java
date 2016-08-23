@@ -17,6 +17,7 @@ package org.incodelearning.nestedclass;
  * (2) method local inner classes (defined in a method, can only be accessed inside the method),
  * (3) anonymous inner class (I will work on this next week).
  */
+
 public class NestedClassSingletonExample {
 
     public int outerIntegerNonStatic = 10;
