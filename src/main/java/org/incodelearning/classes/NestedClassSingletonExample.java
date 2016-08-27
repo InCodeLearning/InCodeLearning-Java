@@ -1,21 +1,20 @@
-package org.incodelearning.nestedclass;
+package org.incodelearning.classes;
 
 /**
- * Created by Huilin on 8/22/16.
- *
- * This class demonstrates nested classes.
- * Also shows the use of nested class to implement the singleton pattern as an example.
- *  Singleton pattern means only one instance of this class can be created.
- *
- *  Ref: nested class: http://www.tutorialspoint.com/java/java_innerclasses.htm
- *       singleton: http://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples
- *
- * There are two types of nested classes: static and nonstatic
+ * <p>Demonstrates nested classes. Also shows the use of nested class to implement the singleton pattern
+ * as an example.
+ * <p>References:<ul>
+ * <li><a href=http://www.tutorialspoint.com/java/java_innerclasses.htm>nested classes</a></li>
+ * <li><a href=http://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples>singleton</a></li>
+ * </ul>
+ * <p>There are two types of nested classes: static and nonstatic
  * static nested class is associated with the outside class (like a static method)
  * nonstatic nested class is associated with an object of the outside class (like a nonstatic method).
  * For nonstatic nested class, there are (1) inner classes (scope is in class),
  * (2) method local inner classes (defined in a method, can only be accessed inside the method),
  * (3) anonymous inner class (I will work on this next week).
+ *
+ * @author Huilin Shi
  */
 
 
@@ -25,7 +24,7 @@ public class NestedClassSingletonExample {
     public static String outerStringStatic = "Hello";
 
     // 1. make the constructor private, cannot be accessed from outside.
-    private NestedClassSingletonExample(){
+    private NestedClassSingletonExample() {
     }
 
     // 2. write a nested class SingletonHelpler, which maintains an static field that is an instance of NestedClassSingletonExample.
@@ -36,7 +35,7 @@ public class NestedClassSingletonExample {
     // Non-static nested class can only be instantiated with an instance of outer class (like a non-static method).
     // A static class can access only static members of Outer class.
     // A static class can be instantiated with the Outer Class name (like a static method).
-    private static class SingletonHelper{
+    private static class SingletonHelper {
 
         // 3. have the variable INSTANCE as static which ensures INSTANCE only created once (created when the inner class is loaded)
         // Note: if we do not have the inner class, but instead, have the following code line directly in the outside class,
@@ -47,7 +46,7 @@ public class NestedClassSingletonExample {
     }
 
     // 4. public getter to get the instance.
-    public static NestedClassSingletonExample getInstance(){
+    public static NestedClassSingletonExample getInstance() {
         return SingletonHelper.INSTANCE;
     }
 
@@ -65,6 +64,7 @@ public class NestedClassSingletonExample {
         public StaticNestedClass(String innerString) {
             outerStringStatic = innerString;
         }
+
         // can be declared as static or not.
         public static void test(String innerString, int i) {
             outerStringStatic = innerString;
@@ -78,6 +78,7 @@ public class NestedClassSingletonExample {
         public NonStaticNestedClass(String innerString) {
             outerStringStatic = innerString;
         }
+
         // cannot be declared as static
         public void test(String innerString, int i) {
             outerStringStatic = innerString;

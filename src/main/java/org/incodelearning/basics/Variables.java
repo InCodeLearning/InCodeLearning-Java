@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 /**
  * <a href=https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html>java tutorial link</a>.
+ * @author Zexi Jesse Zhuang
  */
 public class Variables {
     /**

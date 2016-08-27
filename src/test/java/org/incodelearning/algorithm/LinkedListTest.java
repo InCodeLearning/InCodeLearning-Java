@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Methods to use LinkedList (Java's LinkedList is doubly linked list) as stack and queue.
+ * @author Zexi Jesse Zhuang
  */
 public class LinkedListTest {
     /**
