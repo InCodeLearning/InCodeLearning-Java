@@ -30,7 +30,7 @@ You must be able to strictly follow these deadlines to continuously participate 
 
 ## Code Requirement
 
-- Well commented.
+- Well commented. **Prefer Javadoc over regular comments, use whenever possible.**
 - Cannot repeat anything in `dev` branch.
 - Must be bug free, running it produces no Exceptions.
 - There is no coding style requirement.
@@ -41,3 +41,4 @@ You must be able to strictly follow these deadlines to continuously participate 
 - [Java Specifications](https://docs.oracle.com/javase/specs/)
 - [Junit Vogella Tutorial](http://www.vogella.com/tutorials/JUnit/article.html)
 - [Guava Git Repository](https://github.com/google/guava)
+- [JavaDoc FAQ](http://www.oracle.com/technetwork/articles/javase/index-137483.html)
