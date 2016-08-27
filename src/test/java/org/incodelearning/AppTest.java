@@ -3,10 +3,17 @@ package org.incodelearning;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.incodelearning.algorithm.LinkedListTest;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
 /**
  * Unit test for simple App.
  */
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+        LinkedListTest.class,
+})
 public class AppTest 
     extends TestCase
 {
