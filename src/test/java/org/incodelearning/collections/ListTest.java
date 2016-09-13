@@ -1,4 +1,4 @@
-package org.incodelearning.algorithm;
+package org.incodelearning.collections;
 
 import org.junit.Test;
 
@@ -33,6 +33,17 @@ public class ListTest {
         list1.remove(new Integer(1));
         list2.remove(4);
         assertEquals("4th element 1 was removed from both lists", list1, list2);
+    }
+
+    /**
+     * {@code Arrays.asList()} returns an ArrayList that is a private static nested class in Arrays, which compiles to
+     * Arrays$ArrayList.class and not java.util.ArrayList.
+     */
+    @Test(expected = UnsupportedOperationException.class)
+    public void asListAddShouldThrowExceptionTest() throws UnsupportedOperationException {
+        Integer[] nums = {1, 2, 3};
+        List<Integer> list = Arrays.asList(nums);
+        list.add(5);
     }
 
 }
