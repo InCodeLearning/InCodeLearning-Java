@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 /**
  * <p>Default linked list implementation, singly linked. Providing access to the first element only.
  * <p>All operations take constant time except iterator O(n).
+ * ToDo: check all methods to see if exception and empty list handling.
  */
 public class SinglyLinkedList<E> extends AbstractLinkedList<E> implements Stack<E> {
 
@@ -87,23 +88,22 @@ public class SinglyLinkedList<E> extends AbstractLinkedList<E> implements Stack<
 
     @Override
     public E peek() {
-        return first.element;
+        return first();
     }
 
     @Override
     public E first() {
+        if (isEmpty()) throw new NoSuchElementException("Linked list is empty.");
         return first.element;
     }
 
     private E removeFirst(boolean fromStack) {
-        if (isEmpty()) {
-            if (fromStack) throw new NoSuchElementException("Stack underflow");
-            else throw new NoSuchElementException("Linked list is empty");
-        }
+        if (isEmpty() && fromStack) throw new NoSuchElementException("Stack underflow.");
         return removeFirst();
     }
 
     public E removeFirst() {
+        if (isEmpty()) throw new NoSuchElementException("Linked list is empty.");
         Node<E> oldFirst = first;
         first = first.next;
         N--;
