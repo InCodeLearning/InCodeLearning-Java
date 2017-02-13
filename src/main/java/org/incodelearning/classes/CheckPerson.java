@@ -1,5 +1,5 @@
 package org.incodelearning.classes;
 
 public interface CheckPerson {
-	boolean test(PersonLambda p);
+	boolean test(LambdaPerson p);
 }
