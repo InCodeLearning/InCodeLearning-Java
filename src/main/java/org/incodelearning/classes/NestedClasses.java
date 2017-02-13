@@ -12,7 +12,7 @@ package org.incodelearning.classes;
  * <li>non-static, also called inner classes
  * <ul>two special kinds of inner classes:
  * <li>local classes
- * <li>anonymous classes, see {@link PersonLambda#main(String[]) PersonLambda.main's} first method call of
+ * <li>anonymous classes, see {@link LambdaPerson#main(String[]) LambdaPerson.main's} first method call of
  * printPsersons with an anonymous class.
  * </ul>
  * </ul>
@@ -91,7 +91,7 @@ public class NestedClasses {
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //TODO: tests
     }
 }
