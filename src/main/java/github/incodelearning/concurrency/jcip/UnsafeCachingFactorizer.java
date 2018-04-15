@@ -1,4 +1,4 @@
-package github.incodelearning.concurrency;
+package github.incodelearning.concurrency.jcip;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;

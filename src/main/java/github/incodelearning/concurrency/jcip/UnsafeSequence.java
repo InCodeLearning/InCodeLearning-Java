@@ -1,4 +1,4 @@
-package github.incodelearning.concurrency;
+package github.incodelearning.concurrency.jcip;
 
 import net.jcip.annotations.*;
 

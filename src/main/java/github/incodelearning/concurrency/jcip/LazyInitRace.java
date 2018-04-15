@@ -1,4 +1,4 @@
-package github.incodelearning.concurrency;
+package github.incodelearning.concurrency.jcip;
 
 /**
  * A common idiom that uses check-then-act is Lazy Initialization.

@@ -1,4 +1,6 @@
-package github.incodelearning.concurrency;
+package github.incodelearning.concurrency.jcip;
+
+import net.jcip.annotations.NotThreadSafe;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -10,6 +12,7 @@ import java.math.BigInteger;
  * timing. The most common type of race condition is check-then-act.
  *
  */
+@NotThreadSafe
 public class UnsafeCountingFactorizer {
 
     // hit counter, number of requests processed

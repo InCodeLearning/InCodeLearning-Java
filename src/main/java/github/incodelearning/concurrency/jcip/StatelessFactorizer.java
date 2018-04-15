@@ -1,4 +1,4 @@
-package github.incodelearning.concurrency;
+package github.incodelearning.concurrency.jcip;
 
 import net.jcip.annotations.ThreadSafe;
 
@@ -11,7 +11,7 @@ import java.math.BigInteger;
  * <p>
  * A stateless servlet. Unpacks the number to be factored from the servlet request, factors it, and packages the result
  * into the servlet response.
- *
+ * <p>
  * stateless: this class has no fields and references no fields from other classes. Stateless objects are always
  * thread-safe. Most servlets can be implemented with no state which reduces the burden of making servlets thread-safe.
  * Only when servlets want to remember things from one request to another that the thread safety requirement becomes an
