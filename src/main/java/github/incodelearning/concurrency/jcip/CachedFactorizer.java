@@ -15,7 +15,7 @@ import java.math.BigInteger;
  * You should be careful not to make the scope of the synchronized block too small. But it is reasonable to exclude
  * from synchronized blocks long-running operations that do not affect shared state.
  * <p>
- * Deciding how big or small to make synchronized blocks require tradeoffs between simplicity and performance. Thread
+ * Deciding how big or small to make synchronized blocks require trade offs between simplicity and performance. Thread
  * safety must be guaranteed. A reasonable balance can usually be found. Avoid holding locks during lengthy computations
  * or operations at risk of not completing quickly such as network or console I/O.
  *

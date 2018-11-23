@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * <p>Thread confinement, not to share mutable data. Swing uses thread confinement extensively. The swing visual
- * components and data objects are not thread safe. Safety is achived by confining them to Swing event dispatch
+ * components and data objects are not thread safe. Safety is achieved by confining them to Swing event dispatch
  * thread. Swing provides a invokeLater mechanism to schedule a Runnable for execution in the event thread. Another
  * common application is the use of pooled JDBC Connection objects.
  * <ul>
