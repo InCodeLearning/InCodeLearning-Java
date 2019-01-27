@@ -19,6 +19,8 @@ public class DemoRunnable implements Runnable {
             e.printStackTrace();
         }
 
+        System.out.println("finished sleeping " + randomNumber);
+
         // Store the return value in result when done
         result = randomNumber;
 

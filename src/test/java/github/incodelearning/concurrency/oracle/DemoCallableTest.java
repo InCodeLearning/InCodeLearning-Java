@@ -1,6 +1,5 @@
 package github.incodelearning.concurrency.oracle;
 
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
