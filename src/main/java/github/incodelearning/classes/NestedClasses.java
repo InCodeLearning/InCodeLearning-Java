@@ -31,26 +31,34 @@ package github.incodelearning.classes;
 
 public class NestedClasses {
 
-    public int outerNonStaticInt = 10;
     public static String outerStaticString = "Hello";
+    public int outerNonStaticInt = 10;
 
     public static void staticMethod() {
         System.out.println("A static method of outer class is called.");
     }
 
+    public static void main(String[] args) {
+        System.out.println("outerStaticString initial value " + outerStaticString);
+        // can only be constructed here because it is private
+        PrivateStaticNestedClass privateStaticNestedClass = new PrivateStaticNestedClass();
+        privateStaticNestedClass.setOuterStaticString("new value");
+        System.out.println("outerStaticString value " + outerStaticString);
+    }
+
     /**
      * Only nested classes can be declared as static (regular classes cannot).  A static nested class can be
      * instantiated with the Outer Class name (like a static method). Compiles to
-     * {@code NestedClasses$StaticNestedClass.class}.
+     * {@code NestedClasses$PrivateStaticNestedClass.class}.
      */
-    private static class StaticNestedClass {
+    private static class PrivateStaticNestedClass {
 
         public static int staticIntCounter = 0;
-        public static int nonStaticInt = 0;
+        public int nonStaticInt;
 
         /**
          * A static class can access only static members of outer class. This method sets the outer class's static
-         * String variable to a different string.
+         * String variable to a different string. This method can be declared as static or Non-Static.
          *
          * @param newString new value to set the outer String
          */
@@ -59,16 +67,16 @@ public class NestedClasses {
             staticMethod();
         }
 
-        /**
-         * This method can be declared as static or not. Set the outer non static integer to a new value.
-         *
-         * @param newInt new value to set the outer Integer
-         */
-        public static void setOuterNonStaticInt(int newInt) {
-            new NestedClasses().outerNonStaticInt = newInt;
+    }
+
+    public static class PublicStaticNestedClass {
+        public static int staticIntCounter = 0;
+        public int nonStaticInt;
+
+        public void setOuterStaticString(String newString) {
+            outerStaticString = newString;
+            staticMethod();
         }
-
-
     }
 
     /**
@@ -91,7 +99,17 @@ public class NestedClasses {
         }
     }
 
-    public static void main(String[] args) {
-        //TODO: tests
+    public class PublicNonStaticNestedClass {
+
+        public int nonStaticInt;
+
+        // cannot be declared as static
+        public void setOuterStaticString(String newString) {
+            outerStaticString = newString;
+        }
+
+        public void setOuterNonStaticInt(int newInt) {
+            outerNonStaticInt = newInt;
+        }
     }
 }

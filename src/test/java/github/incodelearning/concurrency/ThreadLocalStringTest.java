@@ -1,7 +1,5 @@
 package github.incodelearning.concurrency;
 
-import org.junit.Test;
-
 import java.util.Random;
 
 // https://stackoverflow.com/questions/16249687/java-threadlocal-static
