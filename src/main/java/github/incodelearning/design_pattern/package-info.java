@@ -7,4 +7,4 @@
  * <li>Singleton
  * </ul>
  */
-package github.incodelearning.design_patterns;
+package github.incodelearning.design_pattern;

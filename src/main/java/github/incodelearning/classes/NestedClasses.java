@@ -112,4 +112,10 @@ public class NestedClasses {
             outerNonStaticInt = newInt;
         }
     }
+
+    class PackageDefaultNestedClass {
+        int integer;
+
+        void setOuterNonStaticInt(int newInt) { outerNonStaticInt = newInt; }
+    }
 }
