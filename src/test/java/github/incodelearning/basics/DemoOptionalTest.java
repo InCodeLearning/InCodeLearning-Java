@@ -63,6 +63,12 @@ public class DemoOptionalTest {
         assertEquals(DemoOptional.UNKNOWN, getVersion(Optional.ofNullable(computer)));
     }
 
+    @Test(expected = NullPointerException.class)
+    public void testOptionalDefaultValue() {
+        DemoOptional.SoundCard soundCard = tbt.new SoundCard();
+        soundCard.getUsb().ifPresent(usb -> System.out.println(usb));
+    }
+
     private String getVersion(Optional<DemoOptional.Computer> optionalComputer) {
         return optionalComputer.flatMap(DemoOptional.Computer::getSoundCard)
                 .flatMap(DemoOptional.SoundCard::getUsb)

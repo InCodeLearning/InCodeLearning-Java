@@ -25,7 +25,6 @@ public class DemoOptional {
             this.usb = Optional.ofNullable(usb);
         }
         public SoundCard() {
-            this.usb = Optional.empty();
         }
         public Optional<USB> getUsb() {
             return usb;
