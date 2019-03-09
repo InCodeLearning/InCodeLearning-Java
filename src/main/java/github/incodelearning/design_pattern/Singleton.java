@@ -1,7 +1,5 @@
 package github.incodelearning.design_pattern;
 
-import github.incodelearning.classes.NestedClasses;
-
 /**
  * <p>Singleton pattern restricts instantiation of a class to be exactly only one instance in JVM.
  * Singleton pattern is used for logging, drivers objects, caching and thread pool. Sometimes it's appropriate
@@ -16,6 +14,7 @@ public class Singleton {
 
     //Singleton should only be constructed once from inside.
     private Singleton() {
+        System.out.println("Singleton: private constructor accessed.");
     }
 
     /**
@@ -25,7 +24,8 @@ public class Singleton {
      * <p>Because only a private constructor is available. Java compiler {@code javac} plays a trick to add a new non-private
      * (default-protected) constructor which only it knows about. That constructor takes an unused instance of an
      * anonymous class {@code Singleton$1.class} which nobody knows exists. Use {@code javap -c Singleton.class} and
-     * {@code javap -c Singleton$1.class} to see the code. TODO: study the javap results.
+     * {@code javap -c Singleton$1.class} to see the code.
+     * <p>Bill Pugh singleton private static final is lazy init. Constructed
      */
     private static class BillPughSingleton {
         private static final Singleton INSTANCE = new Singleton();
@@ -36,8 +36,4 @@ public class Singleton {
         return BillPughSingleton.INSTANCE;
     }
 
-    public static void main(String[] args) {
-        //TODO: tests
-        System.out.println();
-    }
 }
