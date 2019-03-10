@@ -1,5 +1,6 @@
 package github.incodelearning.design_pattern;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -35,6 +36,9 @@ public class EnumLazySingleton2Test {
     public void testEnumSingleton2() {
         Wrapper wrapper = new Wrapper(EnumLazySingleton2.INSTANCE);
         assertNotNull(wrapper.tbt);
+        Wrapper wrapper1 = new Wrapper(EnumLazySingleton2.INSTANCE);
+        assertNotNull(wrapper1.tbt);
+        Assert.assertNotEquals(wrapper1.hashCode(), wrapper.hashCode());
     }
 
 }

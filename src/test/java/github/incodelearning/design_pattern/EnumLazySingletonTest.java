@@ -51,6 +51,7 @@ public class EnumLazySingletonTest {
         System.out.println("Singleton already constructed and only constructed once.");
         wrapper2.tbt = EnumLazySingleton.INSTANCE;
         Assert.assertEquals(wrapper1.tbt.getSingleton().hashCode(), wrapper2.tbt.getSingleton().hashCode());
+        Assert.assertNotEquals(wrapper1.hashCode(), wrapper2.hashCode());
     }
 
     @Test

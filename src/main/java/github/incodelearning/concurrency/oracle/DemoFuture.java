@@ -10,8 +10,15 @@ import java.util.concurrent.Future;
  */
 public class DemoFuture {
     public class SquareCalculator {
-        private ExecutorService executor
-                = Executors.newSingleThreadExecutor();
+        private ExecutorService executor;
+
+        public SquareCalculator() {
+            executor = Executors.newSingleThreadExecutor();
+        }
+
+        public SquareCalculator(int nThreads) {
+            executor = Executors.newFixedThreadPool(nThreads);
+        }
 
         public Future<Integer> calculate(Integer input) {
             return executor.submit(() -> {

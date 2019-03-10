@@ -3,11 +3,7 @@ package github.incodelearning.concurrency.oracle;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -25,7 +21,7 @@ public class DemoFutureTest {
         Future<Integer> future = tbt.calculate(10);
 
         int timeInMillis = 0;
-        while(!future.isDone()) {
+        while (!future.isDone()) {
             System.out.println(timeInMillis + " Calculating...");
             Thread.sleep(300);
             timeInMillis += 300;
@@ -55,4 +51,36 @@ public class DemoFutureTest {
         future.get();
     }
 
+    @Test
+    public void testFutureSingleThread() throws InterruptedException, ExecutionException {
+        testTwoThreads(1000, 3000);
+    }
+
+    @Test
+    public void testFutureTwoThreads() throws ExecutionException, InterruptedException {
+        tbt = new DemoFuture().new SquareCalculator(2);
+        testTwoThreads(1000, 2000);
+    }
+
+    private void testTwoThreads(int low, int high) throws InterruptedException, ExecutionException {
+        Future<Integer> future1 = tbt.calculate(10);
+        Future<Integer> future2 = tbt.calculate(100);
+        long start = System.currentTimeMillis();
+        while (!(future1.isDone() && future2.isDone())) {
+            System.out.println(
+                    String.format(
+                            "future1 is %s and future2 is %s",
+                            future1.isDone() ? "done" : "not done",
+                            future2.isDone() ? "done" : "not done"
+                    )
+            );
+            Thread.sleep(300);
+        }
+        Integer result1 = future1.get();
+        Integer result2 = future2.get();
+        long time = System.currentTimeMillis() - start;
+        System.out.println("total time (s): " + time / 1000.0);
+        System.out.println(result1 + " and " + result2);
+        assertTrue(time > low && time < high);
+    }
 }

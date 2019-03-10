@@ -29,13 +29,13 @@ public class DemoCallableTest {
     @Test
     public void testCallableSleepTimeInRange() throws Exception {
         FutureTask<Integer> randomNumberTask = new FutureTask<>(basicExample);
-        long startIime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         Thread t = new Thread(randomNumberTask);
         t.start();
         Integer result = randomNumberTask.get();
         System.out.println("result " + result);
         long endTime = System.currentTimeMillis();
-        double time = (endTime - startIime) / 1000d;
+        double time = (endTime - startTime) / 1000d;
         System.out.println("time " + time);
         Assert.assertTrue(time >= 0L && time < 5L);
     }
