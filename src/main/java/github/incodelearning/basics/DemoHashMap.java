@@ -64,16 +64,6 @@ public class DemoHashMap {
         farms.add(new Farm("greenacres", "wheat", 205));
         farms.add(new Farm("greenacres", "cucumber", 205));
 
-
-
         System.out.println(top2FarmsForEachCrop(farms));
-
-        Map<String, String> map = new HashMap<>();
-        map.put("1", "test1");
-        map.put("2", "test2");
-
-        for(Map.Entry<String, String> entry: map.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
     }
 }

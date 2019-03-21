@@ -38,14 +38,6 @@ public class NestedClasses {
         System.out.println("A static method of outer class is called.");
     }
 
-    public static void main(String[] args) {
-        System.out.println("outerStaticString initial value " + outerStaticString);
-        // can only be constructed here because it is private
-        PrivateStaticNestedClass privateStaticNestedClass = new PrivateStaticNestedClass();
-        privateStaticNestedClass.setOuterStaticString("new value");
-        System.out.println("outerStaticString value " + outerStaticString);
-    }
-
     /**
      * Only nested classes can be declared as static (regular classes cannot).  A static nested class can be
      * instantiated with the Outer Class name (like a static method). Compiles to
@@ -117,5 +109,17 @@ public class NestedClasses {
         int integer;
 
         void setOuterNonStaticInt(int newInt) { outerNonStaticInt = newInt; }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("outerStaticString initial value " + outerStaticString);
+        // can only be constructed here because it is private
+        PrivateStaticNestedClass privateStaticNestedClass = new PrivateStaticNestedClass();
+        privateStaticNestedClass.setOuterStaticString("new value");
+        System.out.println("outerStaticString value " + outerStaticString);
+        // non static, cannot be referenced from static main method
+        // NonStaticNestedClass nonStaticNestedClass = new NonStaticNestedClass();
+        NestedClasses nestedClasses = new NestedClasses();
+        NonStaticNestedClass nonStaticNestedClass = nestedClasses.new NonStaticNestedClass();
     }
 }
