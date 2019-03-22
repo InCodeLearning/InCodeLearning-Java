@@ -16,6 +16,9 @@ public class DemoStreamOps {
         return Arrays.stream(array).collect(Collectors.toList());
     }
 
+    /**
+     * groupingBy Can perform SQL like operations.
+     */
     public <E> Map<String, List<E>> groupBy(List<E> list, Function<E, String> getter) {
         return list.stream().collect(groupingBy(getter));
     }
