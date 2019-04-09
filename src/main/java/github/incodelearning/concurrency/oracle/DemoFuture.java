@@ -1,8 +1,6 @@
 package github.incodelearning.concurrency.oracle;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 /**
  * The Future class represents a future result of an asynchronous computation – a result that will eventually appear
@@ -24,6 +22,20 @@ public class DemoFuture {
             return executor.submit(() -> {
                 Thread.sleep(1000);
                 return input * input;
+            });
+        }
+
+        public Future<Integer> sleep() {
+            return executor.submit(() -> {
+                while (!Thread.currentThread().isInterrupted()) {
+                    System.out.println("Sleeping 1s ...");
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        System.out.println("Sleeping interrupted, but caught and current sleep will finish.");
+                    }
+                }
+                return -1;
             });
         }
     }

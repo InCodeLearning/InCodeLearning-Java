@@ -48,7 +48,24 @@ public class DemoFutureTest {
         Future<Integer> future = tbt.calculate(4);
         future.cancel(true);
         assertTrue(future.isCancelled());
+        assertTrue(future.isDone());
         future.get();
+    }
+
+    @Test
+    public void testCancelFutureNotInterrupting() throws InterruptedException, ExecutionException {
+        Future<Integer> future = tbt.sleep();
+        Thread.sleep(500);
+        future.cancel(false);
+        assertTrue(future.isCancelled());
+    }
+
+    @Test
+    public void testCancelFutureInterrupting() throws InterruptedException {
+        Future<Integer> future = tbt.sleep();
+        Thread.sleep(500);
+        future.cancel(true);
+        assertTrue(future.isCancelled());
     }
 
     @Test
