@@ -45,10 +45,16 @@ public class DemoCompletableFuture {
 
         Executors.newCachedThreadPool().submit(() -> {
             Thread.sleep(500);
-            completableFuture.cancel(false);
+            completableFuture.cancel(false);// mayInterruptRunning param has no effect
             return null;
         });
 
         return completableFuture;
+    }
+
+    public Future<String> supplyRunAsync() {
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> "Hello");
+        CompletableFuture.runAsync(() -> System.out.println("running some calculations"));
+        return future;
     }
 }
